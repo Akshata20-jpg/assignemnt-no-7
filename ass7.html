@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Practice</title>
+</head>
+<body>
+    <h2>1. Decimal to Binary Converter</h2>
+    <input type="number" id="decimalInput" placeholder="Enter decimal number">
+    <button onclick="convertToBinary()">Convert</button>
+    <p id="binaryOutput"></p>
+
+    <h2>2. Sum of First 50 Natural Numbers</h2>
+    <button onclick="sumFirst50()">Calculate Sum</button>
+    <p id="sumOutput"></p>
+
+    <h2>3. Even Numbers from 2 to 20</h2>
+    <button onclick="printEvenNumbers()">Show Even Numbers</button>
+    <p id="evenOutput"></p>
+
+    <script>
+        // 1. Decimal to Binary
+        function convertToBinary() {
+            const decimal = parseInt(document.getElementById("decimalInput").value);
+            if (isNaN(decimal)) {
+                document.getElementById("binaryOutput").innerText = "Please enter a valid number.";
+                return;
+            }
+            const binary = decimal.toString(2);
+            document.getElementById("binaryOutput").innerText = `Binary: ${binary}`;
+        }
+
+        // 2. Sum of first 50 natural numbers
+        function sumFirst50() {
+            let sum = 0;
+            for (let i = 1; i <= 50; i++) {
+                sum += i;
+            }
+            document.getElementById("sumOutput").innerText = `Sum of first 50 natural numbers: ${sum}`;
+        }
+
+        // 3. Even numbers from 2 to 20 using while loop
+        function printEvenNumbers() {
+            let result = "";
+            let num = 2;
+            while (num <= 20) {
+                result += num + " ";
+                num += 2;
+            }
+            document.getElementById("evenOutput").innerText = `Even numbers: ${result}`;
+        }
+    </script>
+</body>
+</html>
